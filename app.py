@@ -99,7 +99,7 @@ G5 = (xi * 0.01 * 2 * 100) / (p20_4 * 22.4)
 
 G_h2 = G1 + G2 + G3 + G4 + G5 + 0.3
 
-G_c = (100 * xi * M_c) / (p20_4 * 22.4)
+G_C = (100 * xi * M_c) / (p20_4 * 22.4)
 
 B_H2S = S * (34 / 32)
 G_H2S = B_H2S - S
@@ -231,10 +231,10 @@ table_29 = [
     ['Сырье', 100, m_facilities / 345 / 24 * 1000],
     ['Свежий водородсодержащий газ', G_0_H2,
      m_facilities / 34500 * (G_0_H2 + 0.1) / 24 * 1000],
-    ['Циркулирующий водородсодержащий газ', G_c,
-     m_facilities / 34500 * (G_c + 0.1) / 24 * 1000],
-    ['Сумма', 100 + G_0_H2 + G_c, m_facilities / 345 / 24 * 1000 + m_facilities / 34500 * (
-                G_0_H2 + 0.1) / 24 * 1000 + m_facilities / 34500 * (G_c + 0.1) / 24 * 1000],
+    ['Циркулирующий водородсодержащий газ', G_C,
+     m_facilities / 34500 * (G_C + 0.1) / 24 * 1000],
+    ['Сумма', 100 + G_0_H2 + G_C, m_facilities / 345 / 24 * 1000 + m_facilities / 34500 * (
+                G_0_H2 + 0.1) / 24 * 1000 + m_facilities / 34500 * (G_C + 0.1) / 24 * 1000],
     ['Получено'],
     ['Дизельное топливо', vixod_gidro_diesel_utoch,
      m_facilities * vixod_gidro_diesel_utoch / 34500 / 24 * 1000],
@@ -244,13 +244,13 @@ table_29 = [
      m_facilities / 34500 * (
                  V_sux_gaz + vixod_gidro_diesel_utoch + G_H2S + vixod_benzina - 100) / 24 * 1000],
     ['Бензин', vixod_benzina, m_facilities / 34500 * vixod_benzina / 24 * 1000],
-    ['Циркулирующий водородсодержащий газ', G_c,
-     m_facilities / 34500 * (G_c + 0.1) / 24 * 1000],
+    ['Циркулирующий водородсодержащий газ', G_C,
+     m_facilities / 34500 * (G_C + 0.1) / 24 * 1000],
     ['Сумма:',
      vixod_gidro_diesel_utoch + G_H2S + V_sux_gaz + vixod_gidro_diesel_utoch + G_H2S + vixod_benzina - 100 + vixod_benzina + G_c,
      m_facilities * vixod_gidro_diesel_utoch / 34500 / 24 * 1000 + m_facilities / 34500 * G_H2S / 24 * 1000 + m_facilities / 34500 * (
                  V_sux_gaz + vixod_gidro_diesel_utoch + G_H2S + vixod_benzina - 100) / 24 * 1000 + m_facilities / 34500 * vixod_benzina / 24 * 1000 + m_facilities / 34500 * (
-                 G_c + 0.1) / 24 * 1000]
+                 G_C + 0.1) / 24 * 1000]
 ]
 print(tabulate(table_29, headers=['Наименование', '% масс.', 'кг/ч']))
 
@@ -291,3 +291,4 @@ print('h(цикл): ' + str(h_cycle))
 print('H: ' + str(H))
 print('P: ' + str(delta_P))
 print('t: ' + str(t_itog))
+input()
